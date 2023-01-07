@@ -24,7 +24,7 @@
     "react/jsx-props-no-spreading": "off",
     "react/function-component-definition": [
       2,
-      {"namedComponents": "arrow-function"}
+      { "namedComponents": "arrow-function" }
     ]
   },
   "overrides": [
@@ -33,7 +33,7 @@
       "plugins": ["jest"],
       "extends": ["plugin:jest/recommended"],
       "rules": {
-        "jest/consistent-test-it": ["error", {"fn": "it"}],
+        "jest/consistent-test-it": ["error", { "fn": "it" }],
         "jest/require-top-level-describe": ["error"]
       }
     }
