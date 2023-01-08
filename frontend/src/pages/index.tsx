@@ -2,7 +2,7 @@ import { useCallback, useState } from 'react'
 
 import { OverrideTypography, PrimaryButton } from '../components/atoms'
 
-export default function Home() {
+const Home = () => {
   const [state, setState] = useState(false)
   const handleClick = useCallback(() => setState((s) => !s), [setState])
   return (
@@ -12,3 +12,5 @@ export default function Home() {
     </div>
   )
 }
+
+export default Home
