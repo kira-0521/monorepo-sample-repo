@@ -34,6 +34,7 @@
           "test/**",
           "tests/**",
           "**/__tests__/**",
+          "**/*.test.{ts,tsx}",
           "**/*.stories.{js,jsx,ts,tsx}"
         ],
         "optionalDependencies": false
