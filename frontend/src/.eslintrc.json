@@ -25,6 +25,19 @@
     "react/function-component-definition": [
       2,
       { "namedComponents": "arrow-function" }
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "spec/**",
+          "test/**",
+          "tests/**",
+          "**/__tests__/**",
+          "**/*.stories.{js,jsx,ts,tsx}"
+        ],
+        "optionalDependencies": false
+      }
     ]
   },
   "overrides": [
