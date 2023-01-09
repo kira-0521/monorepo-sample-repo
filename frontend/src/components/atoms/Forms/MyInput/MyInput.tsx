@@ -1,13 +1,15 @@
 import { TextField, TextFieldProps } from '@mui/material'
 import { FC } from 'react'
 
+type InputTypes = 'primary' | 'readOnly' | 'filledReadOnly' | 'filled'
+
 export type MyInputProps = TextFieldProps & {
   label: string
-  inputType: 'primary' | 'readOnly' | 'filledReadOnly' | 'filled'
+  inputType?: InputTypes
 }
 
 const VariantMap: {
-  [K in MyInputProps['inputType']]: TextFieldProps['variant']
+  [K in InputTypes]: TextFieldProps['variant']
 } = {
   primary: 'outlined',
   readOnly: 'outlined',
@@ -15,7 +17,11 @@ const VariantMap: {
   filled: 'filled',
 }
 
-export const MyInput: FC<MyInputProps> = ({ label, inputType, ...props }) => (
+export const MyInput: FC<MyInputProps> = ({
+  label,
+  inputType = 'primary',
+  ...props
+}) => (
   <TextField
     {...props}
     label={label}
@@ -23,3 +29,7 @@ export const MyInput: FC<MyInputProps> = ({ label, inputType, ...props }) => (
     InputProps={{ readOnly: inputType === ('readOnly' || 'filledReadOnly') }}
   />
 )
+
+MyInput.defaultProps = {
+  inputType: 'primary',
+}
