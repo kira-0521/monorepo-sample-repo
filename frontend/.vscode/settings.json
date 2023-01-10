@@ -1,0 +1,4 @@
+{
+  "eslint.workingDirectories": ["./src"],
+  "javascript.suggestionActions.enabled": false
+}
