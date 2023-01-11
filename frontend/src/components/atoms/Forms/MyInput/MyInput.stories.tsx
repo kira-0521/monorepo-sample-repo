@@ -1,45 +1,40 @@
-import { Meta, Story } from '@storybook/react'
-import { MyInput, MyInputProps } from './MyInput'
+import { ComponentMeta, ComponentStoryObj } from '@storybook/react'
+import { MyInput } from './MyInput'
 
-const meta: Meta = {
-  title: 'atoms/MyInput',
+type T = typeof MyInput
+export type Meta = ComponentMeta<T>
+export type Story = ComponentStoryObj<T>
+
+export default {
+  title: 'atoms/forms/MyInput',
   component: MyInput,
-  parameters: {
-    controls: {
-      expanded: true,
-    },
+} as Meta
+
+export const Primary: Story = {
+  args: {
+    label: 'メールアドレス',
+    placeholder: 'メールアドレス',
+    inputType: 'primary',
+  },
+}
+// TODO: 右側だけエッジを効かせる
+export const ReadOnly: Story = {
+  args: {
+    inputType: 'readOnly',
+    defaultValue: 'GET',
   },
 }
 
-export default meta
-
-const Template: Story<MyInputProps> = (args) => <MyInput {...args} />
-
-export const Primary = Template.bind({})
-Primary.args = {
-  label: 'メールアドレス',
-  placeholder: 'メールアドレス',
-  inputType: 'primary',
+export const Filled: Story = {
+  args: {
+    inputType: 'filled',
+    label: 'Filled',
+  },
 }
 
-// TODO: 右側だけエッジを効かせる
-export const ReadOnly = Template.bind({})
-ReadOnly.args = {
-  inputType: 'readOnly',
-  defaultValue: 'GET',
-}
-
-export const Filled = Template.bind({})
-Filled.args = {
-  inputType: 'filled',
-  label: 'Filled',
-}
-
-export const FilledReadOnly = Template.bind({})
-FilledReadOnly.args = {
-  inputType: 'filledReadOnly',
-  defaultValue: 'filledReadOnly',
-  InputProps: {
-    readOnly: true,
+export const FilledReadOnly: Story = {
+  args: {
+    inputType: 'filledReadOnly',
+    defaultValue: 'filledReadOnly',
   },
 }
