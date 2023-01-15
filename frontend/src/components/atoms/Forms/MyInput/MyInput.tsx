@@ -10,7 +10,7 @@ const VARIANT_MAP = {
 
 export type MyInputProps = TextFieldProps & {
   label?: string
-  inputType?: keyof typeof VARIANT_MAP
+  inputType: keyof typeof VARIANT_MAP
 }
 
 export const MyInput: FC<MyInputProps> = ({
@@ -30,5 +30,4 @@ export const MyInput: FC<MyInputProps> = ({
 
 MyInput.defaultProps = {
   label: '',
-  inputType: 'primary',
 }

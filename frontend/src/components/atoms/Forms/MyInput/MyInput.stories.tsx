@@ -1,14 +1,25 @@
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react'
+import { userEvent, within } from '@storybook/testing-library'
 import { MyInput } from './MyInput'
 
 type T = typeof MyInput
 export type Meta = ComponentMeta<T>
 export type Story = ComponentStoryObj<T>
 
-export default {
+const MetaData = {
   title: 'atoms/forms/MyInput',
   component: MyInput,
 } as Meta
+
+export default MetaData
+
+export const TextInputScenario: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const textbox = canvas.getByRole('textbox')
+    await userEvent.type(textbox, 'たくさんの文字をテスト入力するよ')
+  },
+}
 
 export const Primary: Story = {
   args: {

@@ -10,12 +10,14 @@ const { Primary, Delete, Cancel, Draft } = composeStories(stories)
 describe('PrimaryButton', () => {
   test('PrimaryButtonがレンダーされるか', () => {
     render(<Primary />)
-    expect(screen.getByRole('button', { name: /Primary/i })).toBeInTheDocument()
+    expect(
+      screen.getByRole('button', { name: /ログイン/i })
+    ).toBeInTheDocument()
   })
 
   test('DeleteButtonがレンダーされ、押下で該当のTodoが削除されるか', async () => {
     render(<Delete />)
-    const dltButton = screen.getByRole('button', { name: /Delete/i })
+    const dltButton = screen.getByRole('button', { name: /削除/i })
     expect(dltButton).toBeInTheDocument()
   })
   test('CancelButtonがレンダーされており、非活性か', () => {
@@ -23,5 +25,10 @@ describe('PrimaryButton', () => {
     const cancelButton = screen.getByRole('button', { name: /キャンセル/i })
     expect(cancelButton).toBeInTheDocument()
     expect(cancelButton).toBeDisabled()
+  })
+  test('DraftButtonがレンダーされており、非活性か', () => {
+    render(<Draft />)
+    const draftButton = screen.getByRole('button', { name: /下書き保存/i })
+    expect(draftButton).toBeInTheDocument()
   })
 })

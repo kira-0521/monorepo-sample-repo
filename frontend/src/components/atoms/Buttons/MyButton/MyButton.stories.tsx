@@ -10,20 +10,17 @@ type Story = ComponentStoryObj<T>
 export default {
   title: 'atoms/buttons/MyButton',
   component: MyButton,
-  argTypes: {
-    onClick: { action: 'clicked' },
-  },
 } as Meta
 
 export const Primary: Story = {
   args: {
-    children: 'Primary',
+    children: 'ログイン',
   },
 }
 
 export const Delete: Story = {
   args: {
-    children: 'Delete',
+    children: '削除',
     color: 'error',
   },
 }
