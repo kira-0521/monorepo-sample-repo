@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "stylelint": "stylelint --ignore-path .gitignore './**/*.{css,scss,ts,tsx}'",
     "test": "jest --watch --setupFiles ./setupFile.js",
     "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'",
     "prepare": "cd ../../ && husky install",
@@ -37,6 +38,7 @@
     "@storybook/react": "^6.5.15",
     "@storybook/testing-library": "^0.0.13",
     "@storybook/testing-react": "^1.3.0",
+    "@stylelint/postcss-css-in-js": "^0.38.0",
     "@testing-library/jest-dom": "5.16.4",
     "@testing-library/react": "13.2.0",
     "@testing-library/user-event": "14.2.0",
@@ -59,6 +61,11 @@
     "lint-staged": "^13.1.0",
     "prettier": "^2.7.1",
     "storybook-addon-next": "^1.7.1",
+    "stylelint": "^14.16.1",
+    "stylelint-config-idiomatic-order": "^9.0.0",
+    "stylelint-config-prettier": "^9.0.4",
+    "stylelint-config-standard": "^29.0.0",
+    "stylelint-prettier": "^2.0.0",
     "typescript": "4.9.4"
   }
 }
